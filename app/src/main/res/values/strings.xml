@@ -2,5 +2,7 @@
     <string name="app_name">Hello Android Kotlin 2020</string>
     <!-- Es bueno poner las cadenas a usar para poder traducirlas -->
     <string name="curso">"Hola 2º DAM"</string>
+    <string name="modulo">"PMYDM 2020"</string>
     <string name="edt_nombre">Nombre</string>
+    <string name="btn_saludar">Saludar</string>
 </resources>

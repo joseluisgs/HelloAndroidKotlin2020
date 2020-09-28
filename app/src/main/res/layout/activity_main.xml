@@ -24,7 +24,7 @@
             app:layout_constraintHorizontal_bias="0.92" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="28dp"/>
     <Button
-            android:text="Saludar"
+            android:text="@string/btn_saludar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/mainBtnAccion"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,10 +33,10 @@
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="@string/edt_nombre"
-            android:text="Name"
+            android:inputType="textShortMessage"
+            android:text="@string/edt_nombre"
             android:ems="10"
-            android:id="@+id/MainEditNombre"
+            android:id="@+id/mainEditNombre"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             android:layout_marginTop="92dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
