@@ -96,12 +96,13 @@ class MainActivity : AppCompatActivity() {
     private fun menuOtraOpcion() {
         // Escribimos en el log
         // https://developer.android.com/studio/debug/am-logcat?hl=es
-        Log.i("ETiqueta", "Mensaje de log")
+        Log.i("ETIQUETA", "Mensaje de log")
         Toast.makeText(this, "Has pulsado Otra Opción", Toast.LENGTH_SHORT).show()
     }
 
     private fun menuAcercaDe() {
-        Toast.makeText(this, "Has pulsado Acerca De", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, AcercaDeActivity::class.java)
+        startActivity(intent)
     }
 
     // Sobre el ciclo de vida
