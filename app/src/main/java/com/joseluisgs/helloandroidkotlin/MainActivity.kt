@@ -1,6 +1,8 @@
 package com.joseluisgs.helloandroidkotlin
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -13,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     // creamos como propiedades si vamos a usarlos en toda la clase
     private var nombre: String = ""
+    private var correo: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Ciclo de vida.
@@ -21,14 +24,32 @@ class MainActivity : AppCompatActivity() {
 
         // Primer paso recuperar los componentes que vayamos a utilizar enlazando lógica y vistas
         val modulo = getString(R.string.modulo) // Nos ahorramos poner el tipo porque lo definimos en compilación
-        this.nombre = mainEditNombre.text.toString()
-
-        // Creamos el menu
 
         // Añadimos los eventos a los componentes
         mainFloSaludo.setOnClickListener { ejemploSnackBar(it, modulo) }
-        mainBtnAccion.setOnClickListener { ejemploToast("Hola te llamas: $nombre"); }
+        mainBtnAccion.setOnClickListener {
+            // podemos hacer las acciones entre llaves, pero no es recomendable
+            this.nombre = mainEditNombre.text.toString()
+            ejemploToast("Hola te llamas: ${this.nombre}");
+        }
+        mainBtnMostrarDatos.setOnClickListener { abrirMostrarDatos() }
 
+    }
+
+    // Abrimos otra actividad
+    private fun abrirMostrarDatos() {
+        // Tomamos los datos
+        val nombre = mainEditNombre.text.toString()
+        val correo = mainEditCorreo.text.toString()
+        // llamamos al intent
+        // https://developer.android.com/guide/components/intents-filters?hl=es-419
+        val intent = Intent(this, MostrarDatosActivity::class.java).apply {
+            // Adjuntamos los parametros, clave valor
+            putExtra("NOMBRE", nombre)
+            putExtra("CORREO", correo)
+        }
+        // Comenzamos la actividad
+        startActivity(intent)
     }
 
     // Función que saluda usando un SnackBar
@@ -73,6 +94,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun menuOtraOpcion() {
+        // Escribimos en el log
+        // https://developer.android.com/studio/debug/am-logcat?hl=es
+        Log.i("ETiqueta", "Mensaje de log")
         Toast.makeText(this, "Has pulsado Otra Opción", Toast.LENGTH_SHORT).show()
     }
 

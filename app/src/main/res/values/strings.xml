@@ -7,4 +7,6 @@
     <string name="btn_saludar">Saludar</string>
     <string name="menu_acerca_de">Acerca de</string>
     <string name="menu_otra_opcion">Otra opción</string>
+    <string name="btn_mostrar_datos">Mostrar Datos</string>
+    <string name="mostrar_saludo">¡Hola!</string>
 </resources>
