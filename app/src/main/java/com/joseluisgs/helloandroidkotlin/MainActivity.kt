@@ -1,6 +1,9 @@
 package com.joseluisgs.helloandroidkotlin
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         // Primer paso recuperar los componentes que vayamos a utilizar enlazando lógica y vistas
         val modulo = getString(R.string.modulo) // Nos ahorramos poner el tipo porque lo definimos en compilación
         this.nombre = mainEditNombre.text.toString()
+
+        // Creamos el menu
 
         // Añadimos los eventos a los componentes
         mainFloSaludo.setOnClickListener { ejemploSnackBar(it, modulo) }
@@ -42,6 +47,37 @@ class MainActivity : AppCompatActivity() {
     // https://developer.android.com/reference/android/widget/Toast
     private fun ejemploToast(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+    }
+
+    // Creación del menú
+    // https://developer.android.com/guide/topics/ui/menus?hl=es#kotlin
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.menu_acerca_de -> {
+                menuAcercaDe()
+                true
+            }
+            R.id.menu_otra_opcion -> {
+                menuOtraOpcion()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun menuOtraOpcion() {
+        Toast.makeText(this, "Has pulsado Otra Opción", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun menuAcercaDe() {
+        Toast.makeText(this, "Has pulsado Acerca De", Toast.LENGTH_SHORT).show()
     }
 
     // Sobre el ciclo de vida

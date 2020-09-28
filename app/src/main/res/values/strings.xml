@@ -5,4 +5,6 @@
     <string name="modulo">"PMYDM 2020"</string>
     <string name="edt_nombre">Nombre</string>
     <string name="btn_saludar">Saludar</string>
+    <string name="menu_acerca_de">Acerca de</string>
+    <string name="menu_otra_opcion">Otra opción</string>
 </resources>
