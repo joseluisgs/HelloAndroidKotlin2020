@@ -9,4 +9,5 @@
     <string name="menu_otra_opcion">Otra opción</string>
     <string name="btn_mostrar_datos">Mostrar Datos</string>
     <string name="mostrar_saludo">¡Hola!</string>
+    <string name="prueba">Esto es una prueba</string>
 </resources>
