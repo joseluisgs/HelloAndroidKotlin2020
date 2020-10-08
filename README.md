@@ -15,7 +15,8 @@ En este proyecto desarrollaremos una App básica en Android usando Kotlin y los 
 
 - [GitHub](https://github.com/joseluisgs) ![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)
 
-- ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/HelloAndroidKotlin2020)
+
+![GitHub](https://img.shields.io/github/last-commit/joseluisgs/HelloAndroidKotlin2020)
 
 ## Licencia
 
